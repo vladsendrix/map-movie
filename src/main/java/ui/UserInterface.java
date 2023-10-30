@@ -5,9 +5,11 @@ import controller.MovieController;
 
 public class UserInterface {
     private final MovieController movieController;
+    private Scanner scanner;
 
     public UserInterface() {
         this.movieController = new MovieController();
+        this.scanner = new Scanner();
     }
 
     public void displayMenu() {
