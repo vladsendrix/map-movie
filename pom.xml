@@ -6,7 +6,7 @@
 
     <groupId>dev.sendrix</groupId>
     <artifactId>map-movie</artifactId>
-    <version>1.0</version>
+    <version>0.0.1</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
