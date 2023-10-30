@@ -90,6 +90,10 @@ public class UserInterface {
         scanner.close();
     }
 
+    public void printToScreen(String message) {
+        System.out.println(message);
+    }
+
     public static void main(String[] args) {
         UserInterface ui = new UserInterface();
         ui.run();
