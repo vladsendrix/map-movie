@@ -12,8 +12,8 @@ public class MovieRepository implements Repository<Movie>{
     }
 
     @Override
-    public void add(Movie object) {
-        movies.add(object);
+    public void add(Movie movie) {
+        movies.add(movie);
     }
 
     @Override
@@ -22,12 +22,12 @@ public class MovieRepository implements Repository<Movie>{
     }
 
     @Override
-    public void delete(Movie object) {
-        movies.remove(object);
+    public void delete(Movie movie) {
+        movies.remove(movie);
     }
 
     @Override
-    public void update(Movie object, Movie newObject) {
-        object = newObject;
+    public void update(Movie movie, Movie newMovie) {
+        movie = newMovie;
     }
 }
