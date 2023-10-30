@@ -16,15 +16,8 @@ public class MovieController {
         movieRepository.add(movie);
     }
 
-    public void viewAllMovies() {
-        List<Movie> movies = movieRepository.showAll();
-        if (movies.isEmpty()) {
-            System.out.println("No movies available.");
-        } else {
-            for (Movie movie : movies) {
-                System.out.println(movieDetails(movie));
-            }
-        }
+    public List<Movie> viewAllMovies() {
+        return movieRepository.showAll();
     }
 
     public void searchMovie(int movieID) {
@@ -36,7 +29,7 @@ public class MovieController {
         }
     }
 
-    private String movieDetails(Movie movie) {
+    public String movieDetails(Movie movie) {
         return "Movie ID: " + movie.getMovieID() +
                 ", Title: " + movie.getTitle() +
                 ", Director ID: " + movie.getDirectorID() +
