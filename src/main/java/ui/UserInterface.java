@@ -3,13 +3,14 @@ package ui;
 import java.util.Scanner;
 import controller.MovieController;
 import domain.Movie;
+import repository.MovieRepository;
 
 public class UserInterface {
     private final MovieController movieController;
     private final Scanner scanner;
 
-    public UserInterface() {
-        this.movieController = new MovieController();
+    public UserInterface(MovieController controller, MovieRepository repository) {
+        this.movieController = new MovieController(repository);
         this.scanner = new Scanner(System.in);
     }
 
@@ -79,8 +80,4 @@ public class UserInterface {
         return scanner.nextLine();
     }
 
-    public static void main(String[] args) {
-        UserInterface ui = new UserInterface();
-        ui.run();
-    }
 }
