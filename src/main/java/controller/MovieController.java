@@ -17,7 +17,7 @@ public class MovieController {
     }
 
     public void viewAllMovies() {
-        List<Movie> movies = movieRepository.findAll();
+        List<Movie> movies = movieRepository.showAll();
         if (movies.isEmpty()) {
             System.out.println("No movies available.");
         } else {
@@ -28,7 +28,7 @@ public class MovieController {
     }
 
     public void searchMovie(int movieID) {
-        Movie movie = movieRepository.findById(movieID);
+        Movie movie = movieRepository.findByID(movieID);
         if (movie != null) {
             System.out.println(movieDetails(movie));
         } else {
