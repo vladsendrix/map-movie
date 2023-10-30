@@ -2,6 +2,7 @@ package ui;
 
 import java.util.Scanner;
 import controller.MovieController;
+import domain.Movie;
 
 public class UserInterface {
     private final MovieController movieController;
@@ -9,7 +10,7 @@ public class UserInterface {
 
     public UserInterface() {
         this.movieController = new MovieController();
-        this.scanner = new Scanner();
+        this.scanner = new Scanner(System.in);
     }
 
     public void displayMenu() {
@@ -30,7 +31,6 @@ public class UserInterface {
     }
 
     public void run() {
-        Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
         while (!exit) {
@@ -38,8 +38,34 @@ public class UserInterface {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("Adding a movie...");
-                    movieController.addMovie();
+                    System.out.println("Enter the movie title:");
+                    String title = scanner.nextLine();
+
+                    System.out.println("Enter the year:");
+                    int year = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Enter the director ID:");
+                    int directorID = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Enter the studio ID:");
+                    int studioID = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Enter the runtime in minutes:");
+                    int runTimeMinutes = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Enter the budget:");
+                    double budget = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    Movie newMovie = new Movie(0, title, directorID, studioID, runTimeMinutes, budget, year);
+
+                    movieController.addMovie(newMovie);
+
+                    printToScreen("Movie added successfully: " + title);
                     break;
                 case 2:
                     System.out.println("Viewing all movies...");
