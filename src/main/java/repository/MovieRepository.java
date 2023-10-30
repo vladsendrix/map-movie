@@ -4,7 +4,7 @@ import domain.Movie;
 
 import java.util.List;
 
-public class MovieRepository implements Repository<Movie>{
+public class MovieRepository implements Repository<Movie> {
     private List<Movie> movies;
 
     public MovieRepository(List<Movie> movies) {
@@ -29,5 +29,15 @@ public class MovieRepository implements Repository<Movie>{
     @Override
     public void update(Movie movie, Movie newMovie) {
         movie = newMovie;
+    }
+
+    @Override
+    public Movie findByID(int movieID) {
+        for (Movie movie : movies) {
+            if (movie.getMovieID() == movieID) {
+                return movie;
+            }
+        }
+        return null;
     }
 }

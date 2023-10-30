@@ -7,4 +7,5 @@ public interface Repository<T> {
     List<T> showAll();
     void delete(T object);
     void update(T object, T newObject);
+    T findByID(int objectID);
 }
