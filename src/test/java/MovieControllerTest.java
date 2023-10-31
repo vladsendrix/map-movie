@@ -23,7 +23,7 @@ public class MovieControllerTest {
         Movie testMovie = new Movie(1, "Test Movie", 2023, 101, 201, 120, 50000000);
         movieController.addMovie(testMovie);
 
-        List<Movie> storedMovies = movieController.viewAllMovies();
+        List<Movie> storedMovies = movieController.getMovies();
 
         Assertions.assertNotNull(storedMovies);
         Assertions.assertEquals(1, storedMovies.size());

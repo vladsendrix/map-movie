@@ -38,7 +38,7 @@ public class UserInterface {
                     break;
                 case 2:
                     System.out.println("Viewing all movies...");
-                    for ( Movie movie : movieController.viewAllMovies()) {
+                    for ( Movie movie : movieController.getMovies()) {
                         System.out.println(movieController.movieDetails(movie));
                     }
                     break;

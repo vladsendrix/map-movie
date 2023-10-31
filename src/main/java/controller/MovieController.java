@@ -16,8 +16,8 @@ public class MovieController {
         movieRepository.add(movie);
     }
 
-    public List<Movie> viewAllMovies() {
-        return movieRepository.showAll();
+    public List<Movie> getMovies() {
+        return movieRepository.getAll();
     }
 
     public void searchMovie(int movieID) {

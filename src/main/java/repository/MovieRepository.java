@@ -17,7 +17,7 @@ public class MovieRepository implements Repository<Movie> {
     }
 
     @Override
-    public List<Movie> showAll() {
+    public List<Movie> getAll() {
         return movies;
     }
 
