@@ -1,4 +1,4 @@
-package mapmovie.domain;
+package mapmovie.model;
 
 public class MovieGenres {
     private int genreID;
