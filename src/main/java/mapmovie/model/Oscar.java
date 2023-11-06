@@ -1,5 +1,6 @@
 package mapmovie.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +12,8 @@ public class Oscar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int oscarID;
     private String category;
-    private int year;
+    @Column(name = "awardYear")
+    private Integer year;
 
     public Oscar() {
     }
