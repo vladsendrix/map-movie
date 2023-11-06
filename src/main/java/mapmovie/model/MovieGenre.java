@@ -1,6 +1,6 @@
 package mapmovie.model;
 
-public class MovieGenres {
+public class MovieGenre {
     private int genreID;
     private int movieID;
 
@@ -20,7 +20,7 @@ public class MovieGenres {
         this.movieID = movieID;
     }
 
-    public MovieGenres(int genreID, int movieID) {
+    public MovieGenre(int genreID, int movieID) {
         this.genreID = genreID;
         this.movieID = movieID;
     }
