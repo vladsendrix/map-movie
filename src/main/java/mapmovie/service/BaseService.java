@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BaseService<T, ID> {
+public abstract class BaseService<T, ID> {
     private final JpaRepository<T, ID> repository;
 
     public BaseService(JpaRepository<T, ID> repository) {
