@@ -1,8 +1,24 @@
 package mapmovie.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class Genre {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int genreID;
-    private GenreTypes genreName;
+    private String name;
+
+    public Genre() {
+    }
+
+    public Genre(int genreID, String name) {
+        this.genreID = genreID;
+        this.name = name;
+    }
 
     public int getGenreID() {
         return genreID;
@@ -12,16 +28,11 @@ public class Genre {
         this.genreID = genreID;
     }
 
-    public GenreTypes getGenreName() {
-        return genreName;
+    public String getName() {
+        return name;
     }
 
-    public void setGenreName(GenreTypes genreName) {
-        this.genreName = genreName;
-    }
-
-    public Genre(int genreID, GenreTypes genreName) {
-        this.genreID = genreID;
-        this.genreName = genreName;
+    public void setName(String name) {
+        this.name = name;
     }
 }

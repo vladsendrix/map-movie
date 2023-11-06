@@ -1,14 +1,22 @@
 package mapmovie.model;
 
-public class MovieOscar {
-    private int movieID;
-    private int oscarID;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
-    public int getMovieID() {
-        return movieID;
+@Entity
+public class MovieOscar {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int oscarID;
+    private int movieID;
+
+    public MovieOscar() {
     }
 
-    public void setMovieID(int movieID) {
+    public MovieOscar(int oscarID, int movieID) {
+        this.oscarID = oscarID;
         this.movieID = movieID;
     }
 
@@ -20,8 +28,11 @@ public class MovieOscar {
         this.oscarID = oscarID;
     }
 
-    public MovieOscar(int movieID, int oscarID) {
+    public int getMovieID() {
+        return movieID;
+    }
+
+    public void setMovieID(int movieID) {
         this.movieID = movieID;
-        this.oscarID = oscarID;
     }
 }

@@ -1,10 +1,21 @@
 package mapmovie.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class ActorRole {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int actorRoleID;
     private int movieID;
     private int actorID;
     private String role;
+
+    public ActorRole() {
+    }
 
     public ActorRole(int actorRoleID, int movieID, int actorID, String role) {
         this.actorRoleID = actorRoleID;

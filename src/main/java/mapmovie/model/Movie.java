@@ -1,31 +1,27 @@
 package mapmovie.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class Movie {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieID;
     private String title;
     private int year;
     private int directorID;
-    private int studioID;
-    private int runTimeMinutes;
-    private double budget;
 
-    public Movie(int movieID, String title, int direcctorID, int studioID, int runTimeMinutes, double budget,
-            int year) {
+    public Movie() {
+    }
+
+    public Movie(int movieID, String title, int year, int directorID) {
         this.movieID = movieID;
         this.title = title;
-        this.directorID = direcctorID;
-        this.studioID = studioID;
-        this.runTimeMinutes = runTimeMinutes;
-        this.budget = budget;
         this.year = year;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
+        this.directorID = directorID;
     }
 
     public int getMovieID() {
@@ -44,35 +40,19 @@ public class Movie {
         this.title = title;
     }
 
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
     public int getDirectorID() {
         return directorID;
     }
 
-    public void setDirectorID(int direcctorID) {
-        this.directorID = direcctorID;
-    }
-
-    public int getStudioID() {
-        return studioID;
-    }
-
-    public void setStudioID(int studioID) {
-        this.studioID = studioID;
-    }
-
-    public int getRunTimeMinutes() {
-        return runTimeMinutes;
-    }
-
-    public void setRunTimeMinutes(int runTimeMinutes) {
-        this.runTimeMinutes = runTimeMinutes;
-    }
-
-    public double getBudget() {
-        return budget;
-    }
-
-    public void setBudget(double budget) {
-        this.budget = budget;
+    public void setDirectorID(int directorID) {
+        this.directorID = directorID;
     }
 }

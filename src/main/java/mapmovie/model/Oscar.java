@@ -1,12 +1,25 @@
 package mapmovie.model;
 
-public class Oscar {
-    private int oscarID;
-    private GenreTypes category;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
-    public Oscar(int oscarID, GenreTypes category) {
+@Entity
+public class Oscar {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int oscarID;
+    private String category;
+    private int year;
+
+    public Oscar() {
+    }
+
+    public Oscar(int oscarID, String category, int year) {
         this.oscarID = oscarID;
         this.category = category;
+        this.year = year;
     }
 
     public int getOscarID() {
@@ -17,11 +30,19 @@ public class Oscar {
         this.oscarID = oscarID;
     }
 
-    public GenreTypes getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(GenreTypes category) {
+    public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 }

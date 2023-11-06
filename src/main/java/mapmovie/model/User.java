@@ -1,11 +1,22 @@
 package mapmovie.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userID;
     private String username;
     private String firstName;
     private String lastName;
     private String email;
+
+    public User() {
+    }
 
     public User(int userID, String username, String firstName, String lastName, String email) {
         this.userID = userID;

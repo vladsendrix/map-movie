@@ -1,11 +1,30 @@
 package mapmovie.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class Director {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int directorID;
     private String firstName;
     private String lastName;
     private int yearOfBirth;
     private char gender;
+
+    public Director() {
+    }
+
+    public Director(int directorID, String firstName, String lastName, int yearOfBirth, char gender) {
+        this.directorID = directorID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.yearOfBirth = yearOfBirth;
+        this.gender = gender;
+    }
 
     public int getDirectorID() {
         return directorID;
@@ -44,14 +63,6 @@ public class Director {
     }
 
     public void setGender(char gender) {
-        this.gender = gender;
-    }
-
-    public Director(int directorID, String firstName, String lastName, int yearOfBirth, char gender) {
-        this.directorID = directorID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.yearOfBirth = yearOfBirth;
         this.gender = gender;
     }
 }

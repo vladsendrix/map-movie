@@ -1,11 +1,22 @@
 package mapmovie.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class Review {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int reviewID;
     private int movieID;
     private int userID;
     private double rating;
     private String comment;
+
+    public Review() {
+    }
 
     public Review(int reviewID, int movieID, int userID, double rating, String comment) {
         this.reviewID = reviewID;
