@@ -8,7 +8,7 @@ import mapmovie.model.Genre;
 import mapmovie.service.GenreService;
 
 @RestController
-@RequestMapping("/movies")
+@RequestMapping("/genre")
 public class GenreController extends BaseController<Genre, Integer> {
 
     @Autowired

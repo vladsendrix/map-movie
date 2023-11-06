@@ -8,7 +8,7 @@ import mapmovie.model.Actor;
 import mapmovie.service.ActorService;
 
 @RestController
-@RequestMapping("/movies")
+@RequestMapping("/actor")
 public class ActorController extends BaseController<Actor, Integer> {
 
     @Autowired

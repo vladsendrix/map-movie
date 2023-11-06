@@ -8,7 +8,7 @@ import mapmovie.model.Oscar;
 import mapmovie.service.OscarService;
 
 @RestController
-@RequestMapping("/movies")
+@RequestMapping("/oscar")
 public class OscarController extends BaseController<Oscar, Integer> {
 
     @Autowired

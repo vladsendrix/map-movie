@@ -8,7 +8,7 @@ import mapmovie.model.Review;
 import mapmovie.service.ReviewService;
 
 @RestController
-@RequestMapping("/movies")
+@RequestMapping("/review")
 public class ReviewController extends BaseController<Review, Integer> {
 
     @Autowired
