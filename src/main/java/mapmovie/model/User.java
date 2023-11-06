@@ -5,7 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-@Entity
+
+@Entity(name = "AppUser")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
