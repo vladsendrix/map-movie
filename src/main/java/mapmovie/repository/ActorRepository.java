@@ -6,4 +6,5 @@ import mapmovie.model.Actor;
 
 @Repository
 public interface ActorRepository extends BaseRepository<Actor, Integer> {
+    
 }
