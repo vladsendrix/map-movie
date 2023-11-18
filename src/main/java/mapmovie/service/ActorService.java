@@ -8,7 +8,6 @@ import mapmovie.repository.ActorRepository;
 
 @Service
 public class ActorService extends BaseService<Actor, Integer> {
-
     @Autowired
     public ActorService(ActorRepository repository) {
         super(repository);
