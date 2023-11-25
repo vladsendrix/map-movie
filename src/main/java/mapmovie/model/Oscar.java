@@ -47,4 +47,12 @@ public class Oscar {
     public void setYear(int year) {
         this.year = year;
     }
+
+    public String toString() {
+        return "Oscar{" +
+            "oscarID=" + oscarID +
+            ", category='" + category + '\'' +
+            ", year=" + year +
+        '}';
+    }
 }

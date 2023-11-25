@@ -55,4 +55,14 @@ public class Actor {
     public void setNationality(String nationality) {
         this.nationality = nationality;
     }
+
+    public String toString() {
+        return "Actor{" +
+                "id=" + actorID +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", nationality='" + nationality + '\'' +
+                '}';
+    }
+
 }

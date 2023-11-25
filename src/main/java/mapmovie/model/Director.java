@@ -65,4 +65,14 @@ public class Director {
     public void setGender(char gender) {
         this.gender = gender;
     }
+
+    public String toString() {
+        return "Director{" +
+            "directorID=" + directorID +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            ", yearOfBirth=" + yearOfBirth + '\'' +
+            ", gender=" + gender + '\'' +
+        '}';
+    }
 }

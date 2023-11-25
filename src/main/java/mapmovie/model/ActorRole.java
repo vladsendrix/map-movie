@@ -55,4 +55,13 @@ public class ActorRole {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public String toString() {
+        return "ActorRole{" +
+                "actorRoleID=" + actorRoleID + '\'' +
+                ", movieID=" + movieID + '\'' +
+                ", actorID=" + actorID + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
 }

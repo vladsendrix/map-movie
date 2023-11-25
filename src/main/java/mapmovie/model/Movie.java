@@ -57,4 +57,14 @@ public class Movie {
     public void setDirectorID(int directorID) {
         this.directorID = directorID;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+            "movieID=" + movieID +
+            "title='" + title + '\'' +
+            ", year=" + year +
+            ", directorID=" + directorID +
+        '}';
+    }
 }
