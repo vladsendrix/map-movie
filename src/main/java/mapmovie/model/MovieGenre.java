@@ -9,13 +9,16 @@ import jakarta.persistence.GenerationType;
 public class MovieGenre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int movieGenreID;
+
     private int genreID;
     private int movieID;
 
     public MovieGenre() {
     }
 
-    public MovieGenre(int genreID, int movieID) {
+    public MovieGenre(int movieGenreID, int genreID, int movieID) {
+        this.movieGenreID = movieGenreID;
         this.genreID = genreID;
         this.movieID = movieID;
     }
@@ -34,5 +37,13 @@ public class MovieGenre {
 
     public void setMovieID(int movieID) {
         this.movieID = movieID;
+    }
+
+    public int getMovieGenreID() {
+        return movieGenreID;
+    }
+
+    public void setMovieGenreID(int movieGenreID) {
+        this.movieGenreID = movieGenreID;
     }
 }

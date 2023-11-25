@@ -9,13 +9,15 @@ import jakarta.persistence.GenerationType;
 public class MovieOscar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int movieOscarID;
     private int oscarID;
     private int movieID;
 
     public MovieOscar() {
     }
 
-    public MovieOscar(int oscarID, int movieID) {
+    public MovieOscar(int movieOscarID, int oscarID, int movieID) {
+        this.movieOscarID = movieOscarID;
         this.oscarID = oscarID;
         this.movieID = movieID;
     }
@@ -34,5 +36,13 @@ public class MovieOscar {
 
     public void setMovieID(int movieID) {
         this.movieID = movieID;
+    }
+
+    public int getMovieOscarID() {
+        return movieOscarID;
+    }
+
+    public void setMovieOscarID(int movieOscarID) {
+        this.movieOscarID = movieOscarID;
     }
 }
