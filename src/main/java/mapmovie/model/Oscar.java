@@ -18,8 +18,7 @@ public class Oscar {
     public Oscar() {
     }
 
-    public Oscar(int oscarID, String category, int year) {
-        this.oscarID = oscarID;
+    public Oscar(String category, int year) {
         this.category = category;
         this.year = year;
     }

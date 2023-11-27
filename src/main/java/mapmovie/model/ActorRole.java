@@ -17,8 +17,7 @@ public class ActorRole {
     public ActorRole() {
     }
 
-    public ActorRole(int actorRoleID, int movieID, int actorID, String role) {
-        this.actorRoleID = actorRoleID;
+    public ActorRole(int movieID, int actorID, String role) {
         this.movieID = movieID;
         this.actorID = actorID;
         this.role = role;

@@ -17,8 +17,7 @@ public class Actor {
     public Actor() {
     }
 
-    public Actor(int actorID, String firstName, String lastName, String nationality) {
-        this.actorID = actorID;
+    public Actor(String firstName, String lastName, String nationality) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.nationality = nationality;

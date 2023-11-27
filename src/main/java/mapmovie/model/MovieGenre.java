@@ -17,8 +17,7 @@ public class MovieGenre {
     public MovieGenre() {
     }
 
-    public MovieGenre(int movieGenreID, int genreID, int movieID) {
-        this.movieGenreID = movieGenreID;
+    public MovieGenre(int genreID, int movieID) {
         this.genreID = genreID;
         this.movieID = movieID;
     }

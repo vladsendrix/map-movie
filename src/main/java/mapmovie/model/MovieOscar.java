@@ -16,8 +16,7 @@ public class MovieOscar {
     public MovieOscar() {
     }
 
-    public MovieOscar(int movieOscarID, int oscarID, int movieID) {
-        this.movieOscarID = movieOscarID;
+    public MovieOscar(int oscarID, int movieID) {
         this.oscarID = oscarID;
         this.movieID = movieID;
     }

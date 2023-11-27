@@ -18,8 +18,7 @@ public class Director {
     public Director() {
     }
 
-    public Director(int directorID, String firstName, String lastName, int yearOfBirth, char gender) {
-        this.directorID = directorID;
+    public Director(String firstName, String lastName, int yearOfBirth, char gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.yearOfBirth = yearOfBirth;
