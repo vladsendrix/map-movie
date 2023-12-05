@@ -1,7 +1,6 @@
 package mapmovie.cli;
 
 import mapmovie.model.MovieGenre;
-import mapmovie.model.MovieOscar;
 import mapmovie.repository.MovieGenreRepository;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
