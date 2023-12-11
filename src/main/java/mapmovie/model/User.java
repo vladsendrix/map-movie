@@ -1,10 +1,7 @@
 package mapmovie.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity(name = "AppUser")
 public class User {
@@ -15,6 +12,9 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
 
     public User() {
     }
@@ -30,8 +30,8 @@ public class User {
         return userID;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserID(Integer userID) {
+        this.userID = (userID != null) ? userID : 0;
     }
 
     public String getUsername() {
@@ -66,11 +66,33 @@ public class User {
         this.email = email;
     }
 
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    @PreRemove
+    private void preRemove() {
+        deleteReviews();
+    }
+
+    public void deleteReviews() {
+        if (reviews != null) {
+            for (Review review : reviews) {
+                review.setUserID(null);
+            }
+            reviews.clear();
+        }
+    }
+
     @Override
     public String toString() {
         return "User{" +
             "userID=" + userID +
-            "firstName='" + firstName + '\'' +
+            ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
             ", email='" + email + '\'' +
         '}';

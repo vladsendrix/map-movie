@@ -45,8 +45,8 @@ public class Review {
         return userID;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserID(Integer userID) {
+        this.userID = (userID != null) ? userID : 0;
     }
 
     public double getRating() {
@@ -68,9 +68,9 @@ public class Review {
     @Override
     public String toString() {
         return "Review{" +
-            "reviewID=" + reviewID +
-            "rating=" + rating +
-            ", comment='" + comment + '\'' +
-        '}';
+                "reviewID=" + reviewID +
+                "rating=" + rating +
+                ", comment='" + comment + '\'' +
+                '}';
     }
 }
