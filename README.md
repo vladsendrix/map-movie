@@ -43,24 +43,42 @@ To get started with the MapMovie project, follow these steps:
 Actor CLI
 The Actor CLI provides commands to manage actors. Here are the available commands, we'll use the Actor model as an example:
 
-- `actor create` - Create a new actor
+- `{entity} create` - Create a new entity
 ```bash
 createActor <firstName> <lastName> <nationality>
+createActorRole <movieID> <actorID> <role>
+createDirector <firstName> <lastName> <yearOfBirth> <gender>
+createGenre <name>
+createMovie <title> <year> <directorID>
+createMovieGenre <genreID> <movieID>
+createMovieOscar <oscarID> <movieID>
+createOscar <category> <year>
+createReview <movieID> <userID> <rating> <comment>
+createUser <username> <firstName> <lastName> <email>
 ```
 
-- `actor find` - Read an existing actor
+- `{entity} find` - Read an existing entity
 ```bash
-findActor <id>
+find{Entity} <id>
 ```
 
-- `actor update` - Update an existing actor
+- `{entity} update` - Update an existing entity
 ```bash
-updateActor <id> <firstName> <lastName> <nationality>
+upadetActor <id> <firstName> <lastName> <nationality>
+updateActorRole <id> <movieID> <actorID> <role>
+updateDirector <id> <firstName> <lastName> <yearOfBirth> <gender>
+updateGenre <id> <name>
+updateMovie <id> <title> <year> <directorID>
+updateMovieGenre <id> <genreID> <movieID>
+updateMovieOscar <id> <oscarID> <movieID>
+updateOscar <id> <category> <year>
+updateReview <id> <movieID> <userID> <rating> <comment>
+updateUser <id> <username> <firstName> <lastName> <email>
 ```
 
-- `actor delete` - Delete an existing actor
+- `{entity} delete` - Delete an existing entity
 ```bash
-deleteActor <id>
+delete{Entity} <id>
 ```
 
 ## RESTful API
@@ -71,22 +89,31 @@ The project provides a RESTful API for managing entities. It follows the common 
 
 - GET /{entity}/{id}: Get an entity by ID.
 ```bash
-curl -X GET /actor/{id}
+curl -X GET /entity/{id}
 ```
 
 - POST /{entity}: Create a new entity.
 ```bash
-curl -X POST /actor/{id}
+curl -X POST /entity/{id}
 ```
 
 - PUT /{entity}/{id}: Update an entity by ID.
 ```bash
 curl -X PUT -H "Content-Type: application/json" -d '{"firstName":"Mirciu", "lastName":"Nebunu", "nationality":"român"}' /actor/{id}
+curl -X PUT -H "Content-Type: application/json" -d '{"movieID":100, "actorID":50, "role":"leading"}' /actorrole/{id}
+curl -X PUT -H "Content-Type: application/json" -d '{"name":"Razvan", "lastName":"Tiban", "yearOfBirth":1990, "gender": "M"}' /director/{id}
+curl -X PUT -H "Content-Type: application/json" -d '{"firstName":"Drama"}' /genre/{id}
+curl -X PUT -H "Content-Type: application/json" -d '{"title":"LOTR", "year":2001, "directorID":111}' /movie/{id}
+curl -X PUT -H "Content-Type: application/json" -d '{"genreID":1, "movieID":2}' /moviegenre/{id}
+curl -X PUT -H "Content-Type: application/json" -d '{"oscarID":23, "movieID":40}' /movieoscar/{id}
+curl -X PUT -H "Content-Type: application/json" -d '{"movieID":10, "userID":200, "rating": 9.2, "comment": "Very Good"}' /review/{id}
+curl -X PUT -H "Content-Type: application/json" -d '{"username":"BamBam", "firstName":"Mihai", "lastName":"Salcudean", "email": "a@gmail.com"}' /user/{id}
+
 ```
 
 - DELETE /{entity}/{id}: Delete an entity by ID.
 ```bash
-curl -X DELETE /actor/{id}
+curl -X DELETE /entity/{id}
 ```
 
 ## Error Handling
@@ -96,7 +123,7 @@ The error handling in our project is based on the HTTP status codes. Here are th
 In scenarios where an entity is not found, such as when using the findActor operation, the system returns an HTTP 404 Not Found response.
 
 ```bash
-curl -IX GET /actor/{nonexistent_id}
+curl -IX GET /entity/{nonexistent_id}
 ```
 
 ```bash
@@ -107,8 +134,8 @@ Date: Mon, 08 Jan 2024 13:11:18 GMT
 
 ## Use Cases
 
-- Netflix
-- IMDB
-- Self hosted movie library
-- Film Studies Research
-- Film Festival Programming
+- Netflix ( a netflix like project can use our api for the backend)
+- IMDB ( a movie review website can use our review and user logic for the backend)
+- Self hosted movie library ( a plex clone can use our api and relations
+- Film Studies Research ( the movie category and oscars implementation can be useful for a project like this)
+- Film Festival Programming ( with a watchlist implemented, the project can make use of it for future movie programming)
