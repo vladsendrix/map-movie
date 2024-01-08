@@ -11,7 +11,7 @@ To get started with the MapMovie project, follow these steps:
 1. Clone the project repository:
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/vladsendrix/map-movie
    ```
 
 2. Open the project in your preferred Java Integrated Development Environment (IDE).
