@@ -134,8 +134,8 @@ Date: Mon, 08 Jan 2024 13:11:18 GMT
 
 ## Use Cases
 
-- Netflix ( a netflix like project can use our api for the backend)
-- IMDB ( a movie review website can use our review and user logic for the backend)
-- Self hosted movie library ( a plex clone can use our api and relations
-- Film Studies Research ( the movie category and oscars implementation can be useful for a project like this)
-- Film Festival Programming ( with a watchlist implemented, the project can make use of it for future movie programming)
+- Netflix ( a netflix like project can use our api for the backend - can use the database for storing the movie library )
+- IMDB ( a movie review website can use our review and user logic for the backend - providing the possibility for a user to write a review for a movie)
+- Self hosted movie library ( a plex clone can use our api and relations - a microservice that detects movie names can use the database to store the local movie library)
+- Film Studies Research ( the movie category and oscars implementation can be useful for a project like this - can Oscar relations write concise reviews for movies)
+- Film Festival Programming ( with a watchlist implemented, the project can make use of it for future movie programming - providing the possibility for user to organize his schedule for the wanted movies)
