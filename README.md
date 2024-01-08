@@ -38,6 +38,27 @@ To get started with the MapMovie project, follow these steps:
     mvn spring-boot:run
     ```
 
+## Entity
+Actor: <actorID> (INT) <firstName> (String) <lastName> (String) <nationality> (String)
+ActorRole: <actorRoleID> (INT) <movieID> (INT) <actorID> (INT) <role> (String)
+// movieID represents the movie that the actor plays in
+// actorID represents the actor
+Director: <directorID> (INT) <firstName> (String) <lastName> (String) <yearOfBirth> (INT) <gender> (Char)
+Genre: <genreID> (INT) <name> (String)
+Movie: <movieID> (INT) <title> (String) <year> (INT) <directorID> (INT)
+// directorID represents the director in charge for the movie
+MovieGenre: <movieGenreID> (INT) <genreID> (INT) <movieID> (INT)
+// movieID represents the movie
+// genreID represents the genre
+MovieOscar: <movieOscarID> (INT) <oscarID> (INT) <movieID> (INT)
+// movieID represents the movie that won the oscar
+// oscarID represents the specific oscar that the movie won
+Oscar: <oscarID> (INT) <category> (String) <year> (INT)
+Review: <reviewID> (INT) <movieID> (INT) <userID> (INT) <rating> (String) <comment> (String)
+// movieID represents the movie the review is about
+// userID represents the user that wrote the review
+User: <userID> (INT) <username> (String) <firstName> (String) <lastName> (String) <email> (String)
+
 ## CLI
 
 Actor CLI
